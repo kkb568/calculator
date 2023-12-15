@@ -193,3 +193,24 @@ $vivid-magenta: rgb(188, 21, 244);
         background-color: app.$cyan-hover;
     }
 }
+
+@media (max-width: 600px) {
+    .topButtons, .bottomButtons {
+        margin-left: -.3em;
+    }
+
+    .topButtons {
+        grid-template-columns: repeat(4, 2.5rem);
+        gap: 1.5em;
+
+        button {
+            width: 3em;
+        }
+    }
+
+    .bottomButtons {
+        grid-template-columns: repeat(2, 7.2rem);
+        width: 15em;
+        gap: 1.2em;
+    }
+}

@@ -171,3 +171,9 @@ $cyan-hover: rgb(0, 255, 238);
     }
   }
 }
+
+@media (max-width: 600px) {
+  .inner-container {
+    width: 300px;
+  }
+}
