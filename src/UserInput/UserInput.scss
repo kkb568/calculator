@@ -1,0 +1,58 @@
+$input-background-theme-1: rgb(24, 32, 52);
+$input-background-theme-2: rgb(237, 237, 237);
+$white: rgb(255, 255, 255);
+$light-yellow: rgb(255, 229, 61);
+$dark-desaturated-blue: rgb(35, 44, 67);
+$gray-yellow: hsl(60, 10%, 19%);
+$dark-violet: rgb(29, 9, 52);
+$gray-red: rgb(209, 204, 204);
+
+.user-input {
+    border-radius: 5px;
+    padding: 2.5em;
+    text-align: right;
+    margin-bottom: .7em;
+    height: 4em;
+    font-weight: bold;
+  
+    .prev-input {
+      margin-top: -.5em;
+      font-size: 2rem;
+    }
+  
+    .current-input {
+      font-size: 3.5rem;
+    }
+  }
+  
+  .user-input[data-theme=theme_1] {
+    background-color: $input-background-theme-1;
+    color: $white;
+  }
+  
+  .user-input[data-theme=theme_2] {
+    background-color: $input-background-theme-2;
+    color: $gray-yellow;
+  }
+  
+  .user-input[data-theme=theme_3] {
+    background-color: $dark-violet;
+    color: $light-yellow;
+  }
+  
+  .keypad {
+    padding: 2em;
+    border-radius: 1em;
+  }
+  
+  .keypad[data-theme=theme_1] {
+    background-color: $dark-desaturated-blue;
+  }
+  
+  .keypad[data-theme=theme_2] {
+    background-color: $gray-red;
+  }
+  
+  .keypad[data-theme=theme_3] {
+    background-color: $dark-violet;
+  }

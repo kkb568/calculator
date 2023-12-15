@@ -1,0 +1,195 @@
+@use '../App.scss' as app;
+@font-face {
+    font-family: League_Spartan;
+    src: url('../assets/LeagueSpartan.ttf');
+}
+
+$font: League_Spartan;
+$dark-blue-background: rgb(99, 112, 151);
+$dark-blue-hover: rgb(122, 138, 186);
+$dark-blue-shadow: rgb(64, 78, 114);
+$cyan: rgb(55, 127, 134);
+$cyan-hover: rgb(79, 184, 194);
+$dark-cyan: rgb(27, 95, 101);
+$dark-violet: rgb(88, 7, 125);
+$dark-violet-hover: rgb(146, 13, 207);
+$vivid-magenta: rgb(188, 21, 244);
+
+@mixin special-theme-1 {
+    background-color: $dark-blue-background;
+    box-shadow: 0 .25em $dark-blue-shadow;
+}
+@mixin special-theme-2 {
+    background-color: $cyan;
+    box-shadow: 0 .25em $dark-cyan;
+}
+@mixin special-theme-3 {
+    background-color: $dark-violet;
+    box-shadow: 0 .25em $vivid-magenta;
+}
+
+.topButtons {
+    display: grid;
+    grid-template-columns: repeat(4, 8rem);
+    gap: 1em;
+    row-gap: 1.2em;
+    margin-bottom: 1.5em;
+
+    button {
+        width: 5em;
+    }
+
+    .del_button {
+        text-transform: uppercase;
+        color: white;
+    }
+}
+
+.topButtons[data-theme=theme_1] {
+    .functional_buttons {
+        background-color: rgb(234, 227, 220);
+        box-shadow: 0 .25em rgb(180, 165, 151);
+        color: rgb(68, 75, 90);
+    }
+
+    .functional_buttons:hover {
+        background-color: white;
+    }
+
+    .del_button {
+        @include special-theme-1();
+    }
+
+    .del_button:hover {
+        background-color: $dark-blue-hover;
+    }
+}
+
+.topButtons[data-theme=theme_2] {
+    .functional_buttons {
+        background-color: rgb(235, 227, 219);
+        box-shadow: 0 .25em rgb(166, 157, 145);
+        color: rgb(53, 53, 44);
+    }
+
+    .functional_buttons:hover {
+        background-color: white;
+    }
+
+    .del_button {
+        @include special-theme-2();   
+    }
+
+    .del_button:hover {
+        background-color: $cyan-hover;
+    }
+}
+
+.topButtons[data-theme=theme_3] {
+    .functional_buttons {
+        background-color: rgb(52, 28, 79);
+        box-shadow: 0 .25em rgb(135, 28, 156);
+        color: rgb(255, 229, 61);
+    }
+
+    .functional_buttons:hover {
+        background-color: rgb(130, 73, 195);
+    }
+
+    .del_button {
+       @include special-theme-3();
+    }
+
+    .del_button:hover {
+        background-color: $dark-violet-hover;
+    }
+}
+
+.topButtons, .bottomButtons {
+    button {
+        font-family: $font;
+        font-size: 1.2em;
+        font-weight: 700;
+        padding: .7em;
+        cursor: pointer;
+        border: none;
+        border-radius: .5em;
+    }
+
+    button:active {
+        transform: translateY(.3em);
+    }
+}
+
+.bottomButtons {
+    display: grid;
+    grid-template-columns: repeat(2, 15.5rem);
+    width: 32em;
+    gap: 2.2em;
+}
+
+.bottomButtons {
+    button:first-of-type {
+        color: white;
+        text-transform: uppercase;
+    }
+}
+
+.bottomButtons[data-theme=theme_1] {
+    button:first-of-type {
+        @include special-theme-1();
+    }
+
+    button:first-of-type:hover {
+        background-color: $dark-blue-hover;
+    }
+
+    button:last-of-type {
+        background-color: rgb(208, 63, 47);
+        box-shadow: 0 .25em rgb(147, 38, 26);
+        color: white;
+    }
+
+    button:last-of-type:hover {
+        background-color: app.$red-hover;
+    }
+}
+
+.bottomButtons[data-theme=theme_2] {
+    button:first-of-type {
+        @include special-theme-2();
+    }
+
+    button:first-of-type:hover {
+        background-color: $cyan-hover;
+    }
+
+    button:last-of-type {
+        background-color: rgb(202, 85, 2);
+        box-shadow: 0 .25em rgb(137, 57, 1);
+        color: white;
+    }
+
+    button:last-of-type:hover {
+        background-color: app.$orange-hover;
+    }
+}
+
+.bottomButtons[data-theme=theme_3] {
+    button:first-of-type {
+        @include special-theme-3();
+    }
+
+    button:first-of-type:hover {
+        background-color: $dark-violet-hover;
+    }
+
+    button:last-of-type {
+        background-color: rgb(0, 224, 209);
+        box-shadow: 0 .25em rgb(108, 249, 242)
+    }
+
+    button:last-of-type:hover {
+        background-color: app.$cyan-hover;
+    }
+}
