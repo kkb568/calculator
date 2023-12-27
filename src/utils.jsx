@@ -13,10 +13,10 @@ export function calculate(prev, curr) {
       break;
     case '-':
       result = prev_num - curr
-    break;
+      break;
     case '/':
       result = checkDivision(prev_num, curr)
-    break;
+      break;
     case 'x':
       const resultToCheck = prev_num * curr
       if (checkDecimal(resultToCheck)) {
@@ -24,7 +24,7 @@ export function calculate(prev, curr) {
       } else {
         result = resultToCheck
       }
-    break;
+      break;
   }
   return result
 }
